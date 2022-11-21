@@ -1,0 +1,21 @@
+
+First find Raspberry in network with Angry IP Scanner.
+Currently, with the raspberryAP wifi, the IP is in the low 10.0.0.1.
+
+
+To download files, use FileZilla.
+default username ‘pi’ and password ‘raspberry’
+Port is 22.
+
+To SSH, type in terminal
+‘ssh pi@10.0.0.4’
+
+
+sudo set date ‘2018-03-10 11:15:00’
+
+ps axg | grep Time
+
+
+Check how much space on drive.
+df -Bm
+

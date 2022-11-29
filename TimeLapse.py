@@ -32,7 +32,7 @@ while active is True:
 		# Check if the INTERVAL has passed yet.
 		if (time.time() - timerstart > INTERVAL):
 			print('interval')
-			os.system('raspistill -o ' + FOLDER + 'current.jpg -q 100')
+			os.system('libcamera-still -t 5000 -n --autofocus  -o ' + FOLDER + 'current.jpg')
 			timerstart = time.time()
 
 		if (os.path.isfile(FOLDER + 'current.jpg')):
@@ -40,7 +40,7 @@ while active is True:
 			shutil.copyfile(FOLDER + 'current.jpg', FOLDER_current + 'current.jpg')
 			os.rename(FOLDER + 'current.jpg', FOLDER + datetime.datetime.now().strftime("%Y-%m-%d %H%M%S") + '.jpg')
 
-	time.sleep(2.5*60)		
+	time.sleep(2*60)		
 	
 	
 	

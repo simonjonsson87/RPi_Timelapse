@@ -1,23 +1,22 @@
 # Overview
-This is a very simple timelapse script which is meant to be ran on a Raspberry Pi and an Arducam. For more info on how to setup an Arducam for the Raspberry Pi, check [this repository](https://github.com/simonjonsson87/TensorFlowPi.git). 
+This is a very simple timelapse script meant to be run on a Raspberry Pi with an Arducam. For more information on how to set up an Arducam for the Raspberry Pi, check [this repository](https://github.com/simonjonsson87/TensorFlowPi.git).
 
-The idea is that you just have to connect power to the Raspberry to start the timelapse capture. 
+The idea is that you just need to connect power to the Raspberry Pi to start the timelapse capture.
 
 Parameters are configured in the script itself.
 
-The script can be configure to only capture at certain times of day.
+The script can be configured to only capture at certain times of day.
 
-# Shout out
-This code was inspired by PiLapse by The HatMan.
+`startup.sh` is the script that is run from `crontab` to start on reboot. More details are below.
 
-# A few practical notes
+# A Few Practical Notes
 
-Check how much space on drive on Raspbian:
+Check how much space is available on the drive in Raspbian:
 ```
 df -Bm
 ```
 
-To setup the script to run when the raspberry starts, type ```crontab -e``` and add a line like:
+To set up the script to run when the Raspberry Pi starts, type `crontab -e` and add a line like:
 ```
 @reboot /home/pi/RPi_Timelapse/startup.sh >> /home/pi/startup-output.log 2>&1
 ```
